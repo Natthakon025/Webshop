@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ฟิตshop</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Menu Icon */
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            display: none;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            width: 200px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ร้านฟิตshop</h1>
+        <p>เลือกซื้อสินค้าที่คุณชื่นชอบได้ที่นี่</p>
+        <div class="menu-icon" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="dropdown-menu" id="menu">
+            <a href="#">หน้าแรก</a>
+            <a href="#">สินค้า</a>
+            <a href="#">โปรโมชั่น</a>
+            <a href="#">ติดต่อเรา</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- รายการสินค้าทั้งหมด (ตามโค้ดเดิม) -->
+        <div class="product">
+            <img src="img/Me (4).jpg" alt="สินค้า 1">
+            <h3>Optimum Nutrition Gold Standard Whey Protein</h3>
+            <p>ปริมาณโปรตีน: 24 กรัม (ต่อการชง 1 ช้อนตวง) <br> แคลอรี่: 120 แคลอรี่ <br> ไขมัน: 1 กรัม <br> คาร์โบไฮเดรต: 3 กรัม <br> น้ำตาล: 1 กรัม</p>
+            <p class="price">฿2,500</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (5).jpg" alt="สินค้า 2">
+            <h3>BAAM MY WHEY PROTEIN MAX 5 LB</h3>
+            <p>ปริมาณโปรตีน: 25 กรัม (ต่อการชง 1 ช้อนตวง) <br> แคลอรี่: 120 แคลอรี่ <br> ไขมัน: 2 กรัม <br> คาร์โบไฮเดรต: 5 กรัม <br> น้ำตาล: 2 กรัม</p>
+            <p class="price">฿2,000</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (7).jpg" alt="สินค้า 3">
+            <h3>ioVit Whey Protein Isolate</h3>
+            <p>ปริมาณโปรตีน: 24 กรัม (ต่อการชง 1 ช้อนตวง) <br> แคลอรี่: 110 แคลอรี่ <br> ไขมัน: 0.5 กรัม <br> คาร์โบไฮเดรต: 3 กรัม <br> น้ำตาล: 1 กรัม</p>
+            <p class="price">฿1,500</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (3).jpg" alt="สินค้า 4">
+            <h3>วิสทร้า วิตามินซิงก์ 15 มก.</h3>
+            <p>ปริมาณ 45 แคปซูล  <br> (เหมาะสำหรับการใช้เป็นเวลาประมาณ 1.5 เดือน เมื่อทานวันละ 1 แคปซูล)
+            <p class="price">฿270</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (6).jpg" alt="สินค้า 5">
+            <h3>VITAXTRONG 100% PURE CREATINE 5000</h3>
+            <p>ปริมาณ: 5000 มิลลิกรัม <br> (5 กรัม) ต่อหนึ่งหน่วยบริโภค
+                ส่วนผสมหลัก: 100% Creatine Monohydrate 
+            <p class="price">฿1,000</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (8).jpg" alt="สินค้า 6">
+            <h3>L-Arginine 1000mg plus Zinc</h3>
+            <p>บรรจุ 50 เม็ด ช่วยเพิ่มปริมาณอสุจิและเพิ่มสมรรถภาพทางเพศ
+                เพิ่ม Growth Hormone
+            <p class="price">฿270</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (9).jpg" alt="สินค้า 7">
+            <h3>CLEAN MASS HI-PROTEIN GAINER</h3>
+            <p>พลังงาน 620 Kcal = ข้าว 1 มื้อ <br> โปรตีน 66g และ คาร์บ 76g <br> โปรตีนสูงกว่าตัวเพิ่มน้ำหนักทั่วไป ช่วยสร้างกล้ามเนื้อได้มากกว่า 
+            <p class="price">฿2,490</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="product">
+            <img src="img/Me (2).jpg" alt="สินค้า 8">
+            <h3>MAX PROTEIN รสสตอเบอรี่โยเกิร์ต</h3>
+            <p>อกไก่ปั่นพร้อมดื่ม ขนาด 500 มล.
+            <p class="price">฿79</p>
+            <a href="#" class="btn"><i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตะกร้า</a>
+        </div>
+        
+        <!-- เพิ่มสินค้าอื่น ๆ ตามโค้ดที่มีอยู่แล้ว -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ฟิตshop. สงวนลิขสิทธิ์.</p>
+    </footer>
+
+        </div>
+        </div>
+        <script>
+        function toggleMenu(icon) {
+            // Toggle menu icon
+            icon.classList.toggle("change");
+            // Toggle dropdown menu
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
